@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./login.css";
-import { json, Link } from 'react-router-dom';
+import { json, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Modal from './modal/Modal';
 
@@ -8,6 +8,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [modalData, setModalData] = useState(null);  // Modal ma'lumotlarini saqlash uchun state
+    const nav= useNavigate();
 
     const data = {
         username: email,    // 'username' degan nom bilan 'email' yuborilmoqda
@@ -29,6 +30,7 @@ export default function Login() {
                     message: "Login successfully",
                     status: "success"
                 });
+                nav("/dashboard")
             } else {
                 setModalData({
                     name: "Login error",

@@ -1,6 +1,279 @@
-:root{
-    --red:#E42724;
-    --primary-grey:#A9A9A9;
-    --text-color:white;
-    
+:root {
+    --red: #E42724;
+    --primary-grey: #A9A9A9;
+    --text-color: white;
+    --font: "Source Sans 3";
+    --bg-color: white;
+}
+
+.dashboard {
+    background: var(--bg-color);
+    width: 100%;
+    height: 100vh;
+    color: black;
+    /* font-family: var(--font); */
+}
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background: var(--red);
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    display: flex;
+    align-items: start;
+    column-gap: 13px;
+    position: relative;
+    transition: .5s;
+}
+
+.logo-link:hover {
+    opacity: .7;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: end;
+    column-gap: 3px;
+}
+
+.line {
+    width: 11px;
+    height: 31px;
+    background: #a9a9a9;
+    border-radius: 50px;
+}
+
+.line1 {
+    width: 11px;
+    height: 17px;
+    background: #A9A9A9;
+    border-radius: 50px;
+}
+
+.logo-text {
+    font-family: var(--font);
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    column-gap: 35px;
+}
+
+.nav-list-item-link {
+    color: #fff;
+    font-size: 16px;
+    font-family: var(--font);
+    transition: .5s;
+    align-items: center;
+    display: flex;
+    column-gap: 16px;
+}
+
+.nav-list-item-link:hover {
+    opacity: .7;
+    color: #fff;
+}
+
+.profile-link i {
+    transform: scale(1.3);
+    color: white;
+}
+
+.cog {
+    transition: .5s;
+}
+
+.cog:hover {
+    transform: scale(1.3) rotate(360deg);
+}
+
+.dashboard-main {
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+}
+
+.schedule-box {
+    width: 376px;
+    height: auto;
+    /* Make height responsive */
+    background: var(--primary-grey);
+    border-radius: 24px;
+    padding: 24px 22px;
+}
+
+.tops {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.month-and-year {
+    font-family: var(--font);
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    /* Ensure visibility if grey background */
+}
+
+.week-days-names {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 36px;
+    font-family: var(--font);
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    /* Ensure visibility */
+    margin-top: 16px;
+}
+
+/* Grid for days */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 columns for each day of the week */
+    text-align: center;
+    row-gap: 22px;
+    /* Space between rows */
+    margin-top: 22px;
+}
+
+/* Weekday names (M, T, W, etc.) */
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Same structure as the days-grid */
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    /* Ensure visibility */
+    margin-bottom: 10px;
+    /* Space between the week days and the actual days */
+}
+
+/* Days */
+.day {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: var(--secondary-grey);
+    /* Default day background */
+    color: #fff;
+    /* Ensure visibility */
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect on days */
+.day:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Highlight current day (today) */
+.today {
+    background-color: red;
+    /* Highlight color for today's date */
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* Empty spaces before the first day of the month */
+.empty {
+    visibility: hidden;
+}
+
+
+.performances-box {
+    width: 688px;
+    height: 370px;
+    background-color: #A9A9A9;
+    padding: 25px;
+    border-radius: 24px;
+}
+
+.per-title {
+    font-size: 28px;
+    font-family: var(--font);
+    font-weight: 400;
+}
+
+.schedule-table-names {
+    display: flex;
+    justify-content: space-between;
+    max-width: 550px;
+    margin-top: 16px;
+}
+
+.table-name {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: var(--font);
+}
+
+.quizzes-table {
+    margin-top: 14px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.quiz {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quizName {
+    font-size: 16px;
+    font-family: var(--font);
+    min-width: 165px;
+}
+
+.status {
+    padding: 3px 10px;
+    border-radius: 50px;
+    background-color: rgba(10, 240, 10, 0.692);
+    opacity: .7;
+    display: flex;
+    align-items: center;
+}
+
+.participants {
+    transform: translateX(-30px);
+}
+
+.button {
+    transform: translateX(-40px);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid var(--red);
+    cursor: pointer;
+}
+
+.button i{
+    color: var(--red);
 }
