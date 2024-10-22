@@ -1,0 +1,526 @@
+:root {
+    /* Light mode ranglari */
+    --primary-color: #673AB7;
+    /* Asosiy rang - Binafsha */
+    --background-color: #EDE7F6;
+    /* Fon - Och binafsha-oq */
+    --accent-color: #FFC107;
+    /* Aksent - Oltin sariq */
+    --text-color: #37474F;
+    /* Matn - To'q kulrang-ko'k */
+    --divider-color: #03A9F4;
+    /* Bo'limlar ajratuvchi - Yorqin ko'k */
+}
+
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: var(--background-color-dark);
+    border-radius: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -100;
+}
+
+.background img {
+    width: 750px;
+    height: 700px;
+    user-select: none;
+    filter: drop-shadow(0px 0px 10px rgb(125, 125, 240));
+    opacity: .4;
+    animation: bg-a 1.5s;
+
+}
+
+@keyframes bg-a {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.entrance-text {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    z-index: 10;
+}
+
+.entrance-text h1 {
+    font-size: 78px;
+    text-align: center;
+    font-weight: 600;
+    animation: text-a 1.5s;
+}
+
+@keyframes text-a {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.navv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 20px;
+    /* height: 50px; */
+    background: unset;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navv-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 20px;
+}
+
+.navv img {
+    width: 110px;
+    height: 100px;
+    transform: scale(.9);
+}
+
+.navv-item {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.navv-link {
+    color: var(--text-color);
+    transition: .5s;
+}
+
+.navv-link:hover {
+    opacity: .7;
+    color: var(--text-color);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 5px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .5s;
+    border: 2px solid var(--primary-color);
+}
+
+.login-btn:hover {
+    background-color: unset;
+    color: white;
+}
+
+.signup-btn {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 5px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .5s;
+    border: 2px solid var(--primary-color);
+}
+
+.signup-btn:hover {
+    background: unset;
+    color: white;
+}
+
+.about-us {
+    padding: 20px 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.about-us h2 {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.about-us span {
+    margin-top: 20px;
+    display: block;
+}
+
+.features {
+    padding: 40px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Ustun bo'ylab joylashuv */
+    justify-content: center; /* Vertikal markazlash */
+    align-items: center; /* Gorizontal markazlash */
+    backdrop-filter: blur(10px); /* Fonni bulg'ash effekti */
+    height: 800px;
+    /* background: rgba(255, 255, 255, 0.8);  */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Katta soyali effekt */
+}
+
+.features h2 {
+    margin-bottom: 20px; /* Pastki bo'shliq */
+    font-size: 2rem; /* Sarlavha o'lchami */
+    color: var(--primary-color); /* Asosiy rang */
+}
+
+.features-cards {
+    display: flex;
+    flex-wrap: wrap; /* Kartochkalar bir necha qatorda joylashishi */
+    justify-content: center; /* Kartochkalarni markazlashtirish */
+    gap: 20px; /* Kartochkalar o'rtasidagi bo'shliq */
+}
+
+.feature-card {
+    cursor: pointer;
+    user-select: none;
+    background:unset; /* Kartochka foni */
+    border: 1px solid var(--divider-color); /* Chiziq */
+    border-radius: 8px; /* Burchaklarni yumshatish */
+    padding: 20px; /* Ichki bo'shliq */
+    width: 280px; /* Kartochka kengligi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Yumshoq soyali effekt */
+    transition: transform 0.2s; /* O'zgarishlar effekti */
+    text-align: center; /* Matn markazlash */
+}
+
+.feature-card:hover {
+    transform: scale(1.05); /* Hoverda kattalashadi */
+}
+
+.feature-card h3 {
+    margin: 0;
+    color: var(--accent-color); /* Ta'kidlangan rang */
+}
+
+.feature-card p {
+    margin-top: 10px; /* Yuqori bo'shliq */
+    color: var(--text-color); /* Matn rangi */
+}
+
+
+
+
+
+.contact {
+    padding: 100px 0; /* Yana ko'proq bo'shliq qo'shamiz */
+    /* background: linear-gradient(145deg, #1a1a1a, #292929); Gradient fon */
+    color: #fff; /* Matn rangi */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soyali effekt */
+}
+
+.contact h2 {
+    font-size: 36px; /* Bosh sarlavha o'lchami */
+    margin-bottom: 20px;
+    color: #ffcc00; /* Sarlavha rangi */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sarlavha uchun soyali effekt */
+}
+
+.contact p {
+    margin-bottom: 40px; /* Yuqoridan va pastdan bo'shliq */
+    font-size: 18px; /* Matn o'lchami */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Maydonlar o'rtasidagi bo'shliq */
+    max-width: 500px; /* Formaning maksimal kengligi */
+    margin: 0 auto; /* O'rtaga joylashtirish */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 25px; /* Yuqoridan pastga yumshoq burchaklar */
+    outline: none;
+    background-color: var(--background-color); /* Maydonning fon rangi */
+    color: var(--text-color); /* Matn rangi */
+    transition: background-color 0.3s, box-shadow 0.3s; /* O'zgarishlar animatsiyasi */
+    border: .5px solid var(--accent-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: var(--background-color); /* Fokusda bo'lganda rang o'zgarishi */
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.7); /* Fokusda bo'lganda soyali effekt */
+}
+
+.submit-btn {
+    background-color: #ffcc00; /* Tugma rangi */
+    color: #222; /* Tugma matn rangi */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Yumshoq burchaklar */
+    cursor: pointer;
+    font-size: 18px; /* Tugma matn o'lchami */
+    transition: background-color 0.3s, transform 0.3s; /* O'zgarishlar animatsiyasi */
+}
+
+.submit-btn:hover {
+    background-color: #e6b800; /* Hover effekti */
+    transform: scale(1.05); /* Hoverda o'lchami biroz katta bo'lishi */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+  --sz: 2vmin;  /* size */
+  --on: #2eddf3; /* color on */
+  --of: #68838d; /* color off */
+  --tr: all 0.25s ease 0s;
+}	
+
+
+
+.toggle {
+  position: relative;
+  width: calc(var(--sz) * 4);
+  height: calc(var(--sz) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleinput {
+  display: none;
+}
+
+label[for=btn] {
+  position: absolute;
+  width: calc(var(--sz) * 4);
+  height: calc(var(--sz) * 2);
+  background: linear-gradient(180deg, #888, #fff);
+  border-radius: var(--sz);
+  padding: calc(var(--sz) / 5);
+  box-shadow: 0 0 calc(var(--sz) / 50) calc(var(--sz) / 50) #0002;
+}	
+
+#btn:checked + label[for=btn] {
+  box-shadow: 
+    0 calc(var(--sz) / 50) calc(var(--sz) / 5) #fff9, 
+    0 0 calc(var(--sz) / 50) calc(var(--sz) / 50) #0002;
+}
+
+label[for=btn]:after {
+  content: "";
+  position: absolute;
+  width: calc(100% - calc(calc(var(--sz) / 5) * 12));
+  height: calc(100% - calc(calc(var(--sz) / 5) * 2));
+  box-shadow: 0 0 calc(var(--sz) / 2) calc(var(--sz) / 10) var(--on), 0 0 calc(var(--sz) / 2) calc(var(--sz) / 10) #fff;
+  border-radius: var(--sz);
+  z-index: 0;
+  opacity: 0;
+  transition: var(--tr);
+  animation: move-shadow 3s ease 0s 1;
+}
+
+#btn:checked + label[for=btn]:after {
+  opacity: 1;
+  width: calc(100% - calc(calc(var(--sz) / 5) * 4));
+}
+
+
+
+
+
+.track {
+  position: absolute;
+  width: calc(calc(var(--sz) * 4) - calc(var(--sz) / 2.5));
+  height: calc(calc(var(--sz) * 2) - calc(var(--sz) / 2.5));
+  border-radius: var(--sz);
+  overflow: hidden;
+}
+
+.track:before {
+  content: "";
+  position: absolute;
+  width: calc(200% - calc(calc(var(--sz) * 2) - calc(var(--sz) / 3)));
+  height: 100%;
+  left: -50%;
+  transition: var(--tr);
+  background: linear-gradient(90deg, var(--on) 50%, var(--of) 50%);
+  animation: move-color 3s ease 0s 1;
+}
+
+.track:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--sz);
+  box-shadow: 0 calc(var(--sz) / -10) calc(var(--sz) / 10) 0 #0005 inset, 0 calc(var(--sz) / 10) calc(var(--sz) / 10) 0 #0005 inset;
+}
+
+#btn:checked + label .track:before {
+  left: 0%;
+}
+
+.thumb {
+  position: absolute;
+  width: calc(calc(var(--sz) * 2) - calc(var(--sz) / 3));
+  height: calc(calc(var(--sz) * 2) - calc(var(--sz) / 3));
+  top: calc(calc( var(--sz) / 10) + calc(var(--sz) / 15));
+  left: calc(calc( var(--sz) / 10) + calc(var(--sz) / 15));
+  background: linear-gradient(180deg, #fff, #afafaf);
+  border-radius: var(--sz);
+  box-shadow: 0 0 0 calc(var(--sz) / 50) #0002, 0 calc(var(--sz) / 10) calc(var(--sz) / 10) 0 #0008;
+  cursor: pointer;
+  font-size: calc(var(--sz) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: calc(var(--sz) * -0.025);
+  text-shadow: 
+    calc(var(--sz) / -8000) calc(var(--sz) / -150) calc(var(--sz) / 50) #0008, 
+    calc(var(--sz) / 150) calc(var(--sz) / 100) calc(var(--sz) / 50) #fff;
+  color: #7d7c7c;
+  z-index: 1;
+  animation: move-thumb 3s ease 0s 1;
+}
+
+#btn:checked + label .thumb {
+  left: calc(calc(100% - calc(calc(var(--sz) * 2) - calc(var(--sz) / 3))) - calc(calc( var(--sz) / 10) + calc(var(--sz) / 15)));
+  color: var(--on);
+  background: 
+    radial-gradient(circle at 7% 50%, #fff calc(var(--sz) / 50), #fff0 calc(var(--sz) / 2)),
+    radial-gradient(circle at 0 50%, var(--on) 10%, #fff0 60%), 
+    linear-gradient(180deg, #fff, #afafaf);
+  text-shadow: 
+    0 0 calc(var(--sz) / 10) var(--on), 0 0 calc(var(--sz) / 5) #fff, 
+    calc(var(--sz) / -8000) calc(var(--sz) / -150) calc(var(--sz) / 50) #0008, 
+    calc(var(--sz) / 150) calc(var(--sz) / 100) calc(var(--sz) / 50) #fff;
+}
+
+.thumb:before {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(180deg, #0008, #ccc, #fff);
+  position: absolute;
+  z-index: -1;
+  border-radius: var(--sz);
+  border: calc(var(--sz) / 50) solid #ddd;
+}
+
+.txt:before, 
+.txt:after {
+  content: "";
+  position: absolute;
+  left: calc(var(--sz) / 2);
+  top: 25%;
+  content: "ON";
+  transition: var(--tr);
+  font-size: calc(var(--sz) / 1.5);
+  color: #000;
+  opacity: 0.4;
+  text-shadow: 0px -1px 1px #000, 0px 1px 2px #fff;
+}
+
+.txt:after {
+  content: "OFF";
+  left: calc(100% - calc(var(--sz) / 0.625));
+}
+
+
+/* initial animation */
+@keyframes move-thumb {
+  0%, 20%, 80%, 100% { 
+    left: calc(calc( var(--sz) / 10) + calc(var(--sz) / 15));
+    color: #7d7c7c;
+    background: linear-gradient(180deg, #fff, #afafaf);
+    text-shadow:  
+      calc(var(--sz) / -8000) calc(var(--sz) / -150) calc(var(--sz) / 50) #0008, 
+      calc(var(--sz) / 150) calc(var(--sz) / 100) calc(var(--sz) / 50) #fff;
+  }
+  30%, 70% {
+    left: calc(calc(100% - calc(calc(var(--sz) * 2) - calc(var(--sz) / 3))) - calc(calc( var(--sz) / 10) + calc(var(--sz) / 15)));
+    color: var(--on);
+    background: 
+      radial-gradient(circle at 7% 50%, #fff calc(var(--sz) / 50), #fff0 calc(var(--sz) / 2)),
+      radial-gradient(circle at 0 50%, var(--on) 10%, #fff0 60%), 
+      linear-gradient(180deg, #fff, #afafaf);
+    text-shadow:
+      0 0 calc(var(--sz) / 10) var(--on), 0 0 calc(var(--sz) / 5) #fff, 
+      calc(var(--sz) / -8000) calc(var(--sz) / -150) calc(var(--sz) / 50) #0008, 
+      calc(var(--sz) / 150) calc(var(--sz) / 100) calc(var(--sz) / 50) #fff;
+  }
+}
+
+@keyframes move-color {
+  0%, 20%, 80%, 100% { left: -50%; }
+  30%, 70% { left: 0%; }
+}
+
+
+@keyframes move-shadow {
+  0%, 20%, 80%, 100% { 
+    opacity: 0;
+    width: calc(100% - calc(calc(var(--sz) / 5) * 12));	
+  }
+  30%, 70% { 
+    opacity: 1;
+    width: calc(100% - calc(calc(var(--sz) / 5) * 4));
+  }
+}
